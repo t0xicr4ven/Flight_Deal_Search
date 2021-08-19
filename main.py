@@ -1,12 +1,16 @@
-# This file will need to use the DataManager,FlightSearch, FlightData, NotificationManager classes to achieve the program requirements.
-import requests
 import os
+import requests
 from flight_search import FlightSearch
 from flight_data import FlightData
-from pprint import pprint
+# from pprint import pprint
 
 
 SHEETY_ENDPOINT = os.environ.get('flight_search_sheety_endpoint')
+
+
+def hello():
+    return 1+1
+
 
 response = requests.get(url=SHEETY_ENDPOINT)
 data = response.json()
@@ -22,5 +26,5 @@ for place in sheet_data:
     print(new_city.city_name)
 
     if iataCode == "":
-        # if its a new entry by user, it might not have the iata code so we will have to go search for it and alter the sheet
+ # if its a new entry by user, it might not have the iata code so we will have to go search for it and alter the sheet
         FlightSearch.get_iata_code(new_city)
