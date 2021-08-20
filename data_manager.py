@@ -13,6 +13,5 @@ class DataManager:
                 'iataCode': flight_data.city_iata_code,
             }
         }
-        put_response = requests.put(
+        requests.put(
             url=f"{SHEETY_BASE_ENDPOINT}/{flight_data.city_sheety_id}", json=body)
-        print(put_response.text)
