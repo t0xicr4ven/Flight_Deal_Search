@@ -11,7 +11,7 @@ SHEETY_ENDPOINT = os.environ.get('flight_search_sheety_endpoint')
 
 response = requests.get(url=SHEETY_ENDPOINT)
 data = response.json()
-sheet_data = data["prices"]
+sheet_data = data#['prices']
 print(sheet_data)
 # turn each entry into an object
 for place in sheet_data:

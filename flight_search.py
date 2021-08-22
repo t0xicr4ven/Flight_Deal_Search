@@ -22,7 +22,6 @@ class FlightSearch:
             "location_types": "city",
             "term": flight_data.city_name,
             }
-        response = requests.get(url=location_endpoint, params=body,
-                headers=teq_header)
+        response = requests.get(url=location_endpoint, params=body, headers=teq_header)
         result = response.json()['locations']
         return result[0]['code']
